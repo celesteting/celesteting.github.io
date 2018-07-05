@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="sass语法," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="Better Me">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Celeste&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="前言最近在学习postcss，发现书里面很多用到了sass的语法。之前没接触过sass，所以专门看了一下sass，并做了个总结 sass文件后缀名sass有两种后缀文件：一种后缀名sass，不使用大括号和分号；另一种是scss，和我们平时写的css文件格式差不多，使用大括号和分号 变量普通变量定义后可以在全局范围内使用 12$fontSize: 12px;body&amp;#123; font-size:">
+<meta name="keywords" content="sass语法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sass语法">
+<meta property="og:url" content="http://yoursite.com/2017/10/10/sass语法/index.html">
 <meta property="og:site_name" content="Celeste&#39;s Blog">
-<meta property="og:description" content="Better Me">
+<meta property="og:description" content="前言最近在学习postcss，发现书里面很多用到了sass的语法。之前没接触过sass，所以专门看了一下sass，并做了个总结 sass文件后缀名sass有两种后缀文件：一种后缀名sass，不使用大括号和分号；另一种是scss，和我们平时写的css文件格式差不多，使用大括号和分号 变量普通变量定义后可以在全局范围内使用 12$fontSize: 12px;body&amp;#123; font-size:">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-05T13:57:34.908Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Celeste&#39;s Blog">
-<meta name="twitter:description" content="Better Me">
+<meta name="twitter:title" content="sass语法">
+<meta name="twitter:description" content="前言最近在学习postcss，发现书里面很多用到了sass的语法。之前没接触过sass，所以专门看了一下sass，并做了个总结 sass文件后缀名sass有两种后缀文件：一种后缀名sass，不使用大括号和分号；另一种是scss，和我们平时写的css文件格式差不多，使用大括号和分号 变量普通变量定义后可以在全局范围内使用 12$fontSize: 12px;body&amp;#123; font-size:">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/10/sass语法/"/>
 
 
 
 
 
-  <title>Celeste's Blog</title>
+  <title>sass语法 | Celeste's Blog</title>
   
 
 
@@ -143,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,9 +238,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -269,9 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/10/sass语法/" itemprop="url">sass语法</a></h1>
+          <h1 class="post-title" itemprop="name headline">sass语法</h1>
         
 
         <div class="post-meta">
@@ -343,9 +342,7 @@
       
 
       
-        
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在学习postcss，发现书里面很多用到了sass的语法。之前没接触过sass，所以专门看了一下sass，并做了个总结</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在学习postcss，发现书里面很多用到了sass的语法。之前没接触过sass，所以专门看了一下sass，并做了个总结</p>
 <h2 id="sass文件后缀名"><a href="#sass文件后缀名" class="headerlink" title="sass文件后缀名"></a>sass文件后缀名</h2><p>sass有两种后缀文件：一种后缀名sass，不使用大括号和分号；另一种是scss，和我们平时写的css文件格式差不多，使用大括号和分号</p>
 <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="普通变量"><a href="#普通变量" class="headerlink" title="普通变量"></a>普通变量</h3><p>定义后可以在全局范围内使用</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$fontSize: 12px;</span><br><span class="line">body&#123; font-size:$fontSize; &#125;</span><br></pre></td></tr></table></figure>
@@ -418,8 +415,6 @@
 <h4 id="多个字段map数据循环"><a href="#多个字段map数据循环" class="headerlink" title="多个字段map数据循环"></a>多个字段map数据循环</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// sass</span><br><span class="line">$heading:(h1: 2em, h2: 1.5em, h3: 1.2em);</span><br><span class="line">@each $header, $size in $heading&#123;</span><br><span class="line">    #&#123;$header&#125; &#123; font-size: $size; &#125;</span><br><span class="line">&#125;</span><br><span class="line">// css</span><br><span class="line">h1&#123;font-size:2em&#125;</span><br><span class="line">h2&#123;font-size:1.5em&#125;</span><br><span class="line">h3&#123;font-size:1.2em&#125;</span><br></pre></td></tr></table></figure>
 <p>关于循环判断详细分析请查阅：<a href="http://www.w3cplus.com/preprocessor/sass-advanced-application.html" target="_blank" rel="noopener">sass揭秘之@if，@for，@each</a></p>
 
-          
-        
       
     </div>
     
@@ -434,308 +429,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/28/Hexo添加评论、阅读次数和分类:标签/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Huiting Cai">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Celeste's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/28/Hexo添加评论、阅读次数和分类:标签/" itemprop="url">Hexo添加评论、阅读次数和分类/标签</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-28T16:27:13+08:00">
-                2017-08-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo建站/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo建站</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/sass语法/" rel="tag"># sass语法</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h2 id="添加评论"><a href="#添加评论" class="headerlink" title="添加评论"></a>添加评论</h2><h3 id="注册-OAuth-Application"><a href="#注册-OAuth-Application" class="headerlink" title="注册 OAuth Application"></a>注册 OAuth Application</h3><p>注册<a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">OAuth Application</a>，其他内容可以随便写，但要确保填入正确的callback URL（一般是评论页面对应的域名，如：<a href="http://celesteting.com" target="_blank" rel="noopener">http://celesteting.com</a> ）</p>
-<p>最后你会得到一个client ID 和client secret.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/28/Hexo添加评论、阅读次数和分类:标签/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/28/Hexo添加评论、阅读次数和分类:标签/" rel="next" title="Hexo添加评论、阅读次数和分类/标签">
+                <i class="fa fa-chevron-left"></i> Hexo添加评论、阅读次数和分类/标签
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/14/Hexo+Github建站/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Huiting Cai">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Celeste's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/14/Hexo+Github建站/" itemprop="url">Hexo+Github建站</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-14T00:00:00+08:00">
-                2017-08-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo建站/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo建站</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前一直羡慕那些拥有自己个人网站的人，一直想搭建属于自己的个人网站，也是想为自己的成长做个记录。</p>
-<h2 id="什么是Hexo-？"><a href="#什么是Hexo-？" class="headerlink" title="什么是Hexo ？"></a>什么是Hexo ？</h2><p>Hexo是一款基于Node.js的静态博客框架，依赖少、易于安装使用，可以方便的生成静态网页托管在GitHub上。Hexo是GitHub上的开源项目，参见：<a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">Hexo的Git</a>。如果想了解更加全面的Hexo，可以到其官网<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>了解。因为Hexo的创建者是台湾人，对中文的支持很友好，可以选择中文进行查看。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/14/Hexo+Github建站/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -745,10 +468,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -756,6 +480,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -776,8 +504,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -837,6 +574,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sass文件后缀名"><span class="nav-number">2.</span> <span class="nav-text">sass文件后缀名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">3.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#普通变量"><span class="nav-number">3.1.</span> <span class="nav-text">普通变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认变量"><span class="nav-number">3.2.</span> <span class="nav-text">默认变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊变量"><span class="nav-number">3.3.</span> <span class="nav-text">特殊变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多值变量"><span class="nav-number">3.4.</span> <span class="nav-text">多值变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#list"><span class="nav-number">3.4.1.</span> <span class="nav-text">list</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义"><span class="nav-number">3.4.1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用"><span class="nav-number">3.4.1.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#map"><span class="nav-number">3.4.2.</span> <span class="nav-text">map</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义-1"><span class="nav-number">3.4.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用-1"><span class="nav-number">3.4.2.2.</span> <span class="nav-text">使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局变量"><span class="nav-number">3.5.</span> <span class="nav-text">全局变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#目前变量机制"><span class="nav-number">3.5.1.</span> <span class="nav-text">目前变量机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启用global后机制"><span class="nav-number">3.5.2.</span> <span class="nav-text">启用global后机制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#嵌套（Nesting）"><span class="nav-number">4.</span> <span class="nav-text">嵌套（Nesting）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择器嵌套"><span class="nav-number">4.1.</span> <span class="nav-text">选择器嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性嵌套"><span class="nav-number">4.2.</span> <span class="nav-text">属性嵌套</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跳出选择器嵌套（-at-root）"><span class="nav-number">5.</span> <span class="nav-text">跳出选择器嵌套（@at-root）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#普通跳出嵌套"><span class="nav-number">5.1.</span> <span class="nav-text">普通跳出嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#at-root-without-…-和-at-root-with-…"><span class="nav-number">5.2.</span> <span class="nav-text">@at-root(without:…) 和 @at-root(with:…)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#at-root-与-amp-配合使用"><span class="nav-number">5.3.</span> <span class="nav-text">@at-root 与 &amp; 配合使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#keyframe"><span class="nav-number">5.4.</span> <span class="nav-text">@keyframe</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合（mixin）"><span class="nav-number">6.</span> <span class="nav-text">混合（mixin）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无参数mixin"><span class="nav-number">6.1.</span> <span class="nav-text">无参数mixin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有参数mixin"><span class="nav-number">6.2.</span> <span class="nav-text">有参数mixin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多个参数mixin"><span class="nav-number">6.3.</span> <span class="nav-text">多个参数mixin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多组值参数mixin"><span class="nav-number">6.4.</span> <span class="nav-text">多组值参数mixin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#content"><span class="nav-number">6.5.</span> <span class="nav-text">@content</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">7.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#占位选择器"><span class="nav-number">7.1.</span> <span class="nav-text">占位选择器 %</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">8.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算"><span class="nav-number">9.</span> <span class="nav-text">运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件判断及循环"><span class="nav-number">10.</span> <span class="nav-text">条件判断及循环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if判断"><span class="nav-number">10.1.</span> <span class="nav-text">@if判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三目判断"><span class="nav-number">10.2.</span> <span class="nav-text">三目判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for循环"><span class="nav-number">10.3.</span> <span class="nav-text">for循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#each循环"><span class="nav-number">10.4.</span> <span class="nav-text">@each循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单个字段list数据循环"><span class="nav-number">10.4.1.</span> <span class="nav-text">单个字段list数据循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多个字段list数据循环"><span class="nav-number">10.4.2.</span> <span class="nav-text">多个字段list数据循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多个字段map数据循环"><span class="nav-number">10.4.3.</span> <span class="nav-text">多个字段map数据循环</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -957,6 +710,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言之前一直羡慕那些拥有自己个人网站的人，一直想搭建属于自己的个人网站，也是想为自己的成长做个记录。 什么是Hexo ？Hexo是一款基于Node.js的静态博客框架，依赖少、易于安装使用，可以方便的生成静态网页托管在GitHub上。Hexo是GitHub上的开源项目，参见：Hexo的Git。如果想了解更加全面的Hexo，可以到其官网Hexo了解。因为Hexo的创建者是台湾人，对中文的支持很友好，">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo+Github建站">
+<meta property="og:url" content="http://yoursite.com/2017/08/14/Hexo+Github建站/index.html">
+<meta property="og:site_name" content="Celeste&#39;s Blog">
+<meta property="og:description" content="前言之前一直羡慕那些拥有自己个人网站的人，一直想搭建属于自己的个人网站，也是想为自己的成长做个记录。 什么是Hexo ？Hexo是一款基于Node.js的静态博客框架，依赖少、易于安装使用，可以方便的生成静态网页托管在GitHub上。Hexo是GitHub上的开源项目，参见：Hexo的Git。如果想了解更加全面的Hexo，可以到其官网Hexo了解。因为Hexo的创建者是台湾人，对中文的支持很友好，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ounwd2b8q.bkt.clouddn.com/git.png">
+<meta property="og:image" content="http://ounwd2b8q.bkt.clouddn.com/git_bash.png">
+<meta property="og:image" content="http://ounwd2b8q.bkt.clouddn.com/ssh.png">
+<meta property="og:image" content="http://ounwd2b8q.bkt.clouddn.com/git_setssh.png">
+<meta property="og:image" content="http://ounwd2b8q.bkt.clouddn.com/ssh_test.png">
+<meta property="og:image" content="http://ounwd2b8q.bkt.clouddn.com/footer.png">
+<meta property="og:image" content="http://ounwd2b8q.bkt.clouddn.com/baidu.png">
+<meta property="og:image" content="http://ounwd2b8q.bkt.clouddn.com/an.jpg">
+<meta property="og:image" content="http://ounwd2b8q.bkt.clouddn.com/biaoqian.png">
+<meta property="og:image" content="http://ounwd2b8q.bkt.clouddn.com/vistor.png">
+<meta property="og:image" content="http://ounwd2b8q.bkt.clouddn.com/stime.png">
+<meta property="og:image" content="http://ounwd2b8q.bkt.clouddn.com/dnspod.jpg">
+<meta property="og:image" content="http://ounwd2b8q.bkt.clouddn.com/godaddy.png">
+<meta property="og:image" content="http://ounwd2b8q.bkt.clouddn.com/qn.png">
+<meta property="og:updated_time" content="2017-08-28T10:15:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo+Github建站">
+<meta name="twitter:description" content="前言之前一直羡慕那些拥有自己个人网站的人，一直想搭建属于自己的个人网站，也是想为自己的成长做个记录。 什么是Hexo ？Hexo是一款基于Node.js的静态博客框架，依赖少、易于安装使用，可以方便的生成静态网页托管在GitHub上。Hexo是GitHub上的开源项目，参见：Hexo的Git。如果想了解更加全面的Hexo，可以到其官网Hexo了解。因为Hexo的创建者是台湾人，对中文的支持很友好，">
+<meta name="twitter:image" content="http://ounwd2b8q.bkt.clouddn.com/git.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/14/Hexo+Github建站/"/>
+
+
+
+
+
+  <title>Hexo+Github建站 | Celeste's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Celeste's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Better Me</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/14/Hexo+Github建站/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Huiting Cai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Celeste's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Hexo+Github建站</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-14T00:00:00+08:00">
+                2017-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo建站/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo建站</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前一直羡慕那些拥有自己个人网站的人，一直想搭建属于自己的个人网站，也是想为自己的成长做个记录。</p>
+<h2 id="什么是Hexo-？"><a href="#什么是Hexo-？" class="headerlink" title="什么是Hexo ？"></a>什么是Hexo ？</h2><p>Hexo是一款基于Node.js的静态博客框架，依赖少、易于安装使用，可以方便的生成静态网页托管在GitHub上。Hexo是GitHub上的开源项目，参见：<a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">Hexo的Git</a>。如果想了解更加全面的Hexo，可以到其官网<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>了解。因为Hexo的创建者是台湾人，对中文的支持很友好，可以选择中文进行查看。</p>
+<a id="more"></a>
+<h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h2><ul>
+<li>GitHub创建个人仓库</li>
+<li>安装Git</li>
+<li>安装Node.js</li>
+<li>安装Hexo</li>
+<li>将 GitHub 和 Hexo 关联起来</li>
+</ul>
+<h3 id="GitHub创建个人仓库"><a href="#GitHub创建个人仓库" class="headerlink" title="GitHub创建个人仓库"></a>GitHub创建个人仓库</h3><p>登录到GitHub，如果没有GitHub账号，注册一个GitHub账号：<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>,如下图所示创建个人仓库，仓库名应该为：用户名.github.io，[注：这是固定写法]，比如我的仓库名为：celesteting.github.io<br><img src="http://ounwd2b8q.bkt.clouddn.com/git.png" alt="image"></p>
+<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>什么是Git？简单来说Git是开源的分布式版本控制系统，我们网站在本地搭建好了，需要使用Git同步到GitHub上。如果想了解Git的细节，参考<a href="http://weibo.com/liaoxuefeng?is_hot=1" target="_blank" rel="noopener">廖雪峰</a>老师的Git教程：<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">Git教程</a>。从Git官网下载<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Git-安装包 </a>，下载后安装，在命令行输入git测试是否安装成功，安装成功后，将Git与GitHub账号绑定，鼠标右键打开Git Bash Here。</p>
+<p><img src="http://ounwd2b8q.bkt.clouddn.com/git_bash.png" alt="image"></p>
+<h4 id="设置user-name和user-email配置信息"><a href="#设置user-name和user-email配置信息" class="headerlink" title="设置user.name和user.email配置信息"></a>设置user.name和user.email配置信息</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"你的GitHub用户名"</span></span><br><span class="line">$ git config --global user.email <span class="string">"你的GitHub注册邮箱"</span></span><br></pre></td></tr></table></figure>
+<h4 id="生成ssh密钥文件"><a href="#生成ssh密钥文件" class="headerlink" title="生成ssh密钥文件"></a>生成ssh密钥文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"你的GitHub注册邮箱"</span></span><br></pre></td></tr></table></figure>
+<p>然后直接三个回车即可，默认不需要设置密码<br>然后找到生成的.ssh文件夹中的id_rsa.pub密钥，将内容全部复制，<br><img src="http://ounwd2b8q.bkt.clouddn.com/ssh.png" alt="image"></p>
+<p>打开<a href="https://github.com/settings/keys" target="_blank" rel="noopener">GitHub_Settings_keys</a>页面，新建new SSH Key，Title为标题，随意填即可，将刚刚复制的id_rsa.pub内容复制进去，最后点击Add SSH key。<br><img src="http://ounwd2b8q.bkt.clouddn.com/git_setssh.png" alt="image"></p>
+<p>在Git Bash检测GitHub公钥设置是否成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh git@github.com</span><br></pre></td></tr></table></figure></p>
+<p>如下图说明成功:</p>
+<p><img src="http://ounwd2b8q.bkt.clouddn.com/ssh_test.png" alt="image"></p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>Hexo基于Node.js，Node.js下载地址：<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js下载地址</a>,安装后，</p>
+<p>检测Node.js是否安装成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br></pre></td></tr></table></figure>
+<p>检测npm是否安装成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>Hexo就是我们个人博客的框架，这里需要在自己的电脑里创建一个文件夹，这里我命名为Hexo，Hexo框架与以后你自己发布的网站都在这个文件夹中，创建好后，进入文件夹中 -&gt; Git Bash Here -&gt; 使用npm命令安装Hexo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
+<p>这个安装时间较长（耐心等待中），安装完成后，初始化我们的博客，输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init Hexo</span><br></pre></td></tr></table></figure></p>
+<p>为了检测网站的雏形，分别按顺序输入一下三条命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="built_in">test</span></span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></p>
+<p>完成后在浏览器输入: <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a><br>可以看到我们写出的第一篇博文test。</p>
+<h4 id="常用-Hexo-命令"><a href="#常用-Hexo-命令" class="headerlink" title="常用 Hexo 命令"></a>常用 Hexo 命令</h4><ul>
+<li>hexo n “我的博文”  #新建文章</li>
+<li>hexo generate 也可简写成 hexo g #生成</li>
+<li>hexo server 也可简写成 hexo s #启动服务预览（监视文件变动并自动更新，无需重启服务器）</li>
+<li>hexo deploy 也可简写成 hexo d #部署</li>
+<li>hexo server -s #静态模式</li>
+<li>hexo server -p 5000 #修改端口</li>
+<li>hexo server -i 192.168.1.1 #自定义IP</li>
+<li>hexo clean #清楚缓存</li>
+</ul>
+<h3 id="将-GitHub-和-Hexo-关联起来"><a href="#将-GitHub-和-Hexo-关联起来" class="headerlink" title="将 GitHub 和 Hexo 关联起来"></a>将 GitHub 和 Hexo 关联起来</h3><p>在Hexo根目录里_config.yml文件成为<strong>站点配置</strong>文件，打开_config.yml修改deploy:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repository: https://github.com/celesteting/celesteting.github.io.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
+<p>保存站点配置，其实就是然hexo知道你要把Hexo部署在哪个位置，很明显，我们部署在我们GitHub仓库里，最后安装Git部署插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>这时，我们分别输入三条命令，即可在通过xxx.github.io看到我们的博客了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<h2 id="Hexo个性化配置"><a href="#Hexo个性化配置" class="headerlink" title="Hexo个性化配置"></a>Hexo个性化配置</h2><h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h3><p>我是真的不喜欢Hexo默认的主题，Hexo提供了很多<a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题</a>,我使用的是Oishi主题，在Hexo目录（即自己创建博客的文件夹）中打开命令行，输入如下，下载Oishi主题到Hexo目录中themes下的Oishi文件夹中。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/Oishi</span><br></pre></td></tr></table></figure></p>
+<p>打开Hexo的_config.yml配置文件，将theme修改如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: Oishi</span><br></pre></td></tr></table></figure>
+<h3 id="网站配置"><a href="#网站配置" class="headerlink" title="网站配置"></a>网站配置</h3><h4 id="网站基本配置"><a href="#网站基本配置" class="headerlink" title="网站基本配置"></a>网站基本配置</h4><p>在Hexo的_config.yml中配置,注意timezone要在<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="noopener">时区列表</a>中选取，因为刚开始以为是随便写，写个了Shenzhen发现hexo g一直报错…</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Hexo Configuration</span><br><span class="line">## Docs: https://hexo.io/docs/configuration.html</span><br><span class="line">## Source: https://github.com/hexojs/hexo/</span><br><span class="line"></span><br><span class="line"># Site</span><br><span class="line">title: Celeste&apos;s Blog   #网站标题</span><br><span class="line">subtitle: Better Me     #网站副标题</span><br><span class="line">description: Better Me  #网站描述（主要用于SEO）</span><br><span class="line">author: Huiting Cai     #作者</span><br><span class="line">language: zh-Hans       #网站使用语言（zh-Hans显示简体中文）</span><br><span class="line">timezone: Asia/Shanghai #网站时区，Hexo默认使用您电脑的时区。</span><br></pre></td></tr></table></figure>
+<h4 id="网站其他配置"><a href="#网站其他配置" class="headerlink" title="网站其他配置"></a>网站其他配置</h4><p>网站刚开始创建的时候导航只有“首页”、“归档”、“标签”，而且点击“标签”会报404错误。</p>
+<h5 id="处理点击“标签”-404错误"><a href="#处理点击“标签”-404错误" class="headerlink" title="处理点击“标签” 404错误"></a>处理点击“标签” 404错误</h5><p>因为不存在标签这个页面，所以报404错误。此时需要给创建一个tags页面。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page &quot;tags&quot;</span><br></pre></td></tr></table></figure></p>
+<p>重新发布后，发现点击“标签”显示正常</p>
+<h5 id="给导航增加选项，如“分类”"><a href="#给导航增加选项，如“分类”" class="headerlink" title="给导航增加选项，如“分类”"></a>给导航增加选项，如“分类”</h5><p>在 <strong>Hexo\themes\Oishi\ _config.yml</strong> 找到menu:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  categories: /categories/</span><br><span class="line">  #about: /about/</span><br><span class="line">  archives: /archives/</span><br><span class="line">  tags: /tags/</span><br><span class="line">  #sitemap: /sitemap.xml</span><br><span class="line">  #commonweal: /404/</span><br></pre></td></tr></table></figure>
+<p>在git shell中new一个“分类”页面，否则点击导航的“分类”会报404错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page &quot;categories&quot;</span><br></pre></td></tr></table></figure></p>
+<h5 id="去掉footer的由-Hexo-强力驱动，主题等信息"><a href="#去掉footer的由-Hexo-强力驱动，主题等信息" class="headerlink" title="去掉footer的由 Hexo 强力驱动，主题等信息"></a>去掉footer的由 Hexo 强力驱动，主题等信息</h5><p><img src="http://ounwd2b8q.bkt.clouddn.com/footer.png" alt="image"></p>
+<p>编辑 <strong>Hexo\themes\Oishi\layout\ _partials\footer.swig</strong> ，将以下代码删掉（注：因为我用的是Oishi主题，所以要删选择对应主题中的layout\ _partials\footer.swig即可）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.copyright %&#125;</span><br><span class="line">  &lt;div class=&quot;powered-by&quot;&gt;</span><br><span class="line">    &#123;&#123; __(&apos;footer.powered&apos;, &apos;&lt;a class=&quot;theme-link&quot; href=&quot;https://hexo.io&quot;&gt;Hexo&lt;/a&gt;&apos;) &#125;&#125;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">  &lt;div class=&quot;theme-info&quot;&gt;</span><br><span class="line">    &#123;&#123; __(&apos;footer.theme&apos;) &#125;&#125; &amp;mdash;</span><br><span class="line">    &lt;a class=&quot;theme-link&quot; href=&quot;https://github.com/iissnan/hexo-theme-next&quot;&gt;</span><br><span class="line">      NexT.&#123;&#123; theme.scheme &#125;&#125;</span><br><span class="line">    &lt;/a&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="集成第三方服务"><a href="#集成第三方服务" class="headerlink" title="集成第三方服务"></a>集成第三方服务</h4><p>资料来源于<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">NexT</a></p>
+<h5 id="百度统计"><a href="#百度统计" class="headerlink" title="百度统计"></a>百度统计</h5><p>1.登录 <a href="https://tongji.baidu.com/web/welcome/login" target="_blank" rel="noopener">百度统计</a>，定位到站点的代码获取页面；</p>
+<p>2.复制.hm.js?后面那串统计脚本的id；<br><img src="http://ounwd2b8q.bkt.clouddn.com/baidu.png" alt="image"></p>
+<p>3.编辑 <strong>Hexo\themes\Oishi\ _config.yml</strong> ,将baidu_analytics字段的值设为你的百度统计脚本id。</p>
+<h5 id="阅读次数统计（LeanCloud）"><a href="#阅读次数统计（LeanCloud）" class="headerlink" title="阅读次数统计（LeanCloud）"></a>阅读次数统计（LeanCloud）</h5><p>注册 <a href="https://leancloud.cn/" target="_blank" rel="noopener">LeanCloud</a> 账号并验证邮箱之后，我们就可以登录LeanCloud账号，进行一番配置之后拿到 App ID 以及 App Key 这两个参数即可正常使用文章阅读量统计功能了。</p>
+<p>1.应用 -&gt; 创建新应用 -&gt; 创建<br>2.设置 -&gt; 应用Key -&gt; 复制 App ID 以及 App Key 在编辑 <strong>Hexo\themes\Oishi\ _config.yml</strong> 中相应位置输入即可。<br><img src="http://ounwd2b8q.bkt.clouddn.com/an.jpg" alt="image"><br>正确配置之后文件如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">leancloud_visitors:</span><br><span class="line">  enable: true</span><br><span class="line">  app_id: yOW0YyukmCgRVHTlVKQrwuCX</span><br><span class="line">  app_key: 8Cdt8dmYHgvO6tUDiD</span><br></pre></td></tr></table></figure></p>
+<h4 id="修改文章底部那个带-号的标签"><a href="#修改文章底部那个带-号的标签" class="headerlink" title="修改文章底部那个带#号的标签"></a>修改文章底部那个带#号的标签</h4><p>实现效果图如图，需要修改模板 <strong>Hexo\themes\Oishi\layout\ _macro\post.swig</strong> ，搜索 rel=”tag”&gt;# ，将 # 换成 <i class="fa fa-tag"></i></p>
+<p><img src="http://ounwd2b8q.bkt.clouddn.com/biaoqian.png" alt="image"></p>
+<h4 id="给文章添加边框效果"><a href="#给文章添加边框效果" class="headerlink" title="给文章添加边框效果"></a>给文章添加边框效果</h4><p>打开 Hexo\themes\Oishi\source\css\ _custom\custom.styl，向里面加入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.post &#123;</span><br><span class="line">  padding: 25px;</span><br><span class="line">  -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);</span><br><span class="line">  -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="在网站底部加上本站访客数"><a href="#在网站底部加上本站访客数" class="headerlink" title="在网站底部加上本站访客数"></a>在网站底部加上本站访客数</h4><p>打开 <strong>Hexo\themes\Oishi\layout\ _partials\footer.swig</strong> 文件，在copyright前加上下面这句代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script async src=&quot;https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>再在合适位置添加以下显示统计的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;theme-info&quot;&gt;</span><br><span class="line">  &lt;i class=&quot;fa fa-user-md&quot;&gt;&lt;/i&gt;</span><br><span class="line">    &lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;</span><br><span class="line">      本站访客数:&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;次</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在页面底部显示下图</p>
+<p><img src="http://ounwd2b8q.bkt.clouddn.com/vistor.png" alt="image"></p>
+<p>在这里有两种不同计算方式的统计代码：<br>1.<strong>pv</strong>的方式，单个用户连续点击n篇文章，记录n次访问量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;</span><br><span class="line">    本站总访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<p>2.<strong>uv</strong>的方式，单个用户连续点击n篇文章，只记录1次访客数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;</span><br><span class="line">  本站总访问量&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;次</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="修改页面中文显示"><a href="#修改页面中文显示" class="headerlink" title="修改页面中文显示"></a>修改页面中文显示</h4><p>打开 <strong>Hexo\themes\Oishi\languages\zh-Hans.yml</strong></p>
+<h4 id="实现文章的统计功能"><a href="#实现文章的统计功能" class="headerlink" title="实现文章的统计功能"></a>实现文章的统计功能</h4><p>安装 hexo-wordcount ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-wordcount --save</span><br></pre></td></tr></table></figure></p>
+<p>然后在主题配置文件(themes\Oishi\ _config.yml)中，配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">post_wordcount:</span><br><span class="line">  item_text: true</span><br><span class="line">  wordcount: true</span><br><span class="line">  min2read: true</span><br></pre></td></tr></table></figure></p>
+<p>要将数字统计以及阅读时长换行显示，打开 <strong>Hexo\themes\Oishi\source\css\ _custom\custom.styl</strong> 添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.post-wordcount&#123; display: block; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>效果图如下：</p>
+<p><img src="http://ounwd2b8q.bkt.clouddn.com/stime.png" alt="image"></p>
+<h4 id="添加顶部加载条"><a href="#添加顶部加载条" class="headerlink" title="添加顶部加载条"></a>添加顶部加载条</h4><p>打开 <strong>\Hexo\themes\Oishi\layout\ _partials\head.swig</strong> 文件，添加以下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;//cdn.bootcss.com/pace/1.0.2/pace.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;link href=&quot;//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>但是，默认是粉色的，改变颜色在该文件中添加以下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    .pace .pace-progress &#123;</span><br><span class="line">        background: #1E92FB; /*进度条颜色*/</span><br><span class="line">        height: 3px;</span><br><span class="line">    &#125;</span><br><span class="line">    .pace .pace-progress-inner &#123;</span><br><span class="line">         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/</span><br><span class="line">    &#125;</span><br><span class="line">    .pace .pace-activity &#123;</span><br><span class="line">        border-top-color: #1E92FB;    /*上边框颜色*/</span><br><span class="line">        border-left-color: #1E92FB;    /*左边框颜色*/</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="修改字体大小"><a href="#修改字体大小" class="headerlink" title="修改字体大小"></a>修改字体大小</h4><p>打开 <strong>Hexo\themes\Oishi\source\css\ _variables\base.styl</strong> 文件，将 <strong>$font-size-base</strong>改成<strong>16px</strong></p>
+<h4 id="修改页面样式"><a href="#修改页面样式" class="headerlink" title="修改页面样式"></a>修改页面样式</h4><p>打开 <strong>Hexo\themes\Oishi\source\css\ _custom\custom.styl</strong> 编辑相应样式即可</p>
+<h4 id="修改页面的html结构"><a href="#修改页面的html结构" class="headerlink" title="修改页面的html结构"></a>修改页面的html结构</h4><p>我希望给字体统计和阅读时长加上单位，编辑 <strong>Hexo\themes\Oishi\layout\ _macro\post.swig</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.post_wordcount.wordcount or theme.post_wordcount.min2read %&#125;</span><br><span class="line">            &lt;div class=&quot;post-wordcount&quot;&gt;</span><br><span class="line">              &#123;% if theme.post_wordcount.wordcount %&#125;</span><br><span class="line">                &#123;% if not theme.post_wordcount.separated_meta %&#125;</span><br><span class="line">                  &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span><br><span class="line">                &#123;% endif %&#125;</span><br><span class="line">                &lt;span class=&quot;post-meta-item-icon&quot;&gt;</span><br><span class="line">                  &lt;i class=&quot;fa fa-file-word-o&quot;&gt;&lt;/i&gt;</span><br><span class="line">                &lt;/span&gt;</span><br><span class="line">                &#123;% if theme.post_wordcount.item_text %&#125;</span><br><span class="line">                  &lt;span class=&quot;post-meta-item-text&quot;&gt;&#123;&#123; __(&apos;post.wordcount&apos;) &#125;&#125;&lt;/span&gt;</span><br><span class="line">                &#123;% endif %&#125;</span><br><span class="line">                &lt;span title=&quot;&#123;&#123; __(&apos;post.wordcount&apos;) &#125;&#125;&quot;&gt;</span><br><span class="line">                  &#123;&#123; wordcount(post.content) &#125;&#125; 字</span><br><span class="line">                &lt;/span&gt;</span><br><span class="line">              &#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">              &#123;% if theme.post_wordcount.wordcount and theme.post_wordcount.min2read %&#125;</span><br><span class="line">                &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span><br><span class="line">              &#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">              &#123;% if theme.post_wordcount.min2read %&#125;</span><br><span class="line">                &lt;span class=&quot;post-meta-item-icon&quot;&gt;</span><br><span class="line">                  &lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt;</span><br><span class="line">                &lt;/span&gt;</span><br><span class="line">                &#123;% if theme.post_wordcount.item_text %&#125;</span><br><span class="line">                  &lt;span class=&quot;post-meta-item-text&quot;&gt;&#123;&#123; __(&apos;post.min2read&apos;) &#125;&#125;&lt;/span&gt;</span><br><span class="line">                &#123;% endif %&#125;</span><br><span class="line">                &lt;span title=&quot;&#123;&#123; __(&apos;post.min2read&apos;) &#125;&#125;&quot;&gt;</span><br><span class="line">                  &#123;&#123; min2read(post.content) &#125;&#125; min</span><br><span class="line">                &lt;/span&gt;</span><br><span class="line">              &#123;% endif %&#125;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">          &#123;% endif %&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="设置头像"><a href="#设置头像" class="headerlink" title="设置头像"></a>设置头像</h4><ol>
+<li><p>添加头像图片<br>打开 <strong>Hexo\config.yml</strong> ，为其添加以下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">avatar: http://ounwd2b8q.bkt.clouddn.com/timg.jpg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑头像样式，给头像加入hover的动画<br>打开 <strong>Hexo\themes\Oishi\source\css_common\components\sidebar\sidebar-author.styl</strong> 文件，添加以下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">.site-author-image &#123;</span><br><span class="line">  display: block;</span><br><span class="line">  margin: 0 auto;</span><br><span class="line">  padding: $site-author-image-padding;</span><br><span class="line">  max-width: $site-author-image-width;</span><br><span class="line">  height: $site-author-image-height;</span><br><span class="line">  border: $site-author-image-border-width solid $site-author-image-border-color;</span><br><span class="line"></span><br><span class="line">  border-radius: 80px; </span><br><span class="line">  box-shadow: inset 0 -1px 0 #333sf;</span><br><span class="line"></span><br><span class="line">  transition: transform 1s ease-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">img:hover&#123;</span><br><span class="line">  animation-play-state: paused;</span><br><span class="line">  transform: rotateZ(360deg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="设置网站图标"><a href="#设置网站图标" class="headerlink" title="设置网站图标"></a>设置网站图标</h4><p>在<a href="http://www.easyicon.net/" target="_blank" rel="noopener">EasyIcon</a>中找一张（32x32）的 ico 图标，并将图标名称改为 favicon.ico ，然后把图标放在七牛里，并在 <strong>Hexo\themes\Oishi\ _config.yml</strong> 添加以下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">favicon: http://ounwd2b8q.bkt.clouddn.com/favicon.ico</span><br></pre></td></tr></table></figure></p>
+<h4 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h4><ol>
+<li>购买域名，我是在<a href="https://sg.godaddy.com/zh?ci=" target="_blank" rel="noopener">Godaddy</a>购买了域名；</li>
+<li>在网站目录 <strong>\Hexo\source</strong> 新建一个CNAME的文件（不要后缀）编辑里面的内容为域名：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">celesteting.com</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>再在git Bash运行 hexo g -d</p>
+<ol start="3">
+<li>添加DNS Service记录<br>流传Godaddy的域名解析服务器被墙掉，导致域名无法访问，不得已需要把域名解析服务迁移到国内比较稳定的服务商，这里选的是<a href="https://www.dnspod.cn" target="_blank" rel="noopener">DNSPod</a>。在DNSPod注册账号，然后添加域名设置两个A记录，分别是@和www,ip地址为git page的地址（可以通过命令行 ping celesteting.github.io得到ip地址）</li>
+</ol>
+<p><img src="http://ounwd2b8q.bkt.clouddn.com/dnspod.jpg" alt="image"></p>
+<p>4.设置相应的域名DNS Service</p>
+<p>在<a href="https://dcc.godaddy.com/manage/celesteting.com/dns" target="_blank" rel="noopener">Godaddy</a>管理DNS里面自定义域名服务器中添加以下两条在DNSPod得到的记录</p>
+<p><img src="http://ounwd2b8q.bkt.clouddn.com/godaddy.png" alt="image"></p>
+<ol start="5">
+<li>稍等解析生效后就可以通过在浏览器中输入自己的域名方粉GitHub Pages博客啦！<a href="http://celesteting.com" target="_blank" rel="noopener">celesteting.com</a></li>
+</ol>
+<h2 id="博文操作"><a href="#博文操作" class="headerlink" title="博文操作"></a>博文操作</h2><h3 id="新建博文"><a href="#新建博文" class="headerlink" title="新建博文"></a>新建博文</h3><p>在git shell输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &quot;博文名字&quot;</span><br></pre></td></tr></table></figure></p>
+<p>即可在 <strong>Hexo\source\ _posts</strong> 目录中找到 “博文名字.md” 这个文件。<strong>博文名字</strong>如果包含空格，必须用 “” 将其包围，也可为中文。</p>
+<p>你就可以使用markdown编辑器打开博文内容进行编辑了。我是直接用有道云笔记中的Markdown进行博文编辑的。（其中layout是可选参数，默认为post，layout可在Hexo\scaffolds目录下查看。你也可以添加自己的layout[布局],添加一个文件即可，同时也可以编辑现有的layout，比如post的layout默认是Hexo\scaffolds\post.md）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<p>我想添加categories，以免每次手工输入，只需要修改这个文件添加一行即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">categories: </span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>注意，所有文件的 <strong>:</strong> 后面必须有个空格，不然会报错</p>
+<h3 id="编辑博文"><a href="#编辑博文" class="headerlink" title="编辑博文"></a>编辑博文</h3><h4 id="编辑博文主要信息"><a href="#编辑博文主要信息" class="headerlink" title="编辑博文主要信息"></a>编辑博文主要信息</h4><p>刚刚生成的博文文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo+Github建站       #文章页面上显示的名称，可随意修改，不会出现在URL中</span><br><span class="line">date: 2017/8/14              #文章生成时间，一般不改，当然也可以任意修改</span><br><span class="line">categories: Hexo建站         #文章分类目录，可以为空</span><br><span class="line">tags: [Hexo]                 #文章标签，可空，多标签请用[tag1,tag2,tag3]</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h4 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要"></a>文章摘要</h4><p>不想文章在主页全部显示，可以在需要截取的位置加上一下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="给博客插入图片"><a href="#给博客插入图片" class="headerlink" title="给博客插入图片"></a>给博客插入图片</h4><h5 id="本地路径"><a href="#本地路径" class="headerlink" title="本地路径"></a>本地路径</h5><p>使用本地路径：在<strong>Hexo/source</strong>目录下新建一个img文件夹，将图片放入该文件夹中，插入图片路径即可；</p>
+<h5 id="使用七牛云引用外部链接"><a href="#使用七牛云引用外部链接" class="headerlink" title="使用七牛云引用外部链接"></a>使用七牛云引用外部链接</h5><p><a href="https://portal.qiniu.com/" target="_blank" rel="noopener">七牛云存储</a>:需要注册，速度快。按下图操作上传文件，然后复制外链即可。</p>
+<p><img src="http://ounwd2b8q.bkt.clouddn.com/qn.png" alt="image"></p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ol>
+<li><a href="http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html" target="_blank" rel="noopener">http://shenzekun.cn/hexonext的主题个性化配置教程.html</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">GitHub+Hexo 搭建个人网站详细教程</a></li>
+<li><a href="http://cherryblog.site/" target="_blank" rel="noopener">http://cherryblog.site/</a></li>
+<li><a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">nextT</a></li>
+<li><a href="http://pytlab.org/2016/01/23/GitHub-Pages%E7%BB%91%E5%AE%9A%E9%A1%B6%E7%BA%A7%E5%9F%9F%E5%90%8D/?from=singlemessage&amp;isappinstalled=0" target="_blank" rel="noopener">绑定域名</a></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/28/Hexo添加评论、阅读次数和分类:标签/" rel="prev" title="Hexo添加评论、阅读次数和分类/标签">
+                Hexo添加评论、阅读次数和分类/标签 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Huiting Cai</p>
+              <p class="site-description motion-element" itemprop="description">Better Me</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Hexo-？"><span class="nav-number">2.</span> <span class="nav-text">什么是Hexo ？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建步骤"><span class="nav-number">3.</span> <span class="nav-text">搭建步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub创建个人仓库"><span class="nav-number">3.1.</span> <span class="nav-text">GitHub创建个人仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git"><span class="nav-number">3.2.</span> <span class="nav-text">安装Git</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置user-name和user-email配置信息"><span class="nav-number">3.2.1.</span> <span class="nav-text">设置user.name和user.email配置信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成ssh密钥文件"><span class="nav-number">3.2.2.</span> <span class="nav-text">生成ssh密钥文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Node-js"><span class="nav-number">3.3.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">3.4.</span> <span class="nav-text">安装Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用-Hexo-命令"><span class="nav-number">3.4.1.</span> <span class="nav-text">常用 Hexo 命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将-GitHub-和-Hexo-关联起来"><span class="nav-number">3.5.</span> <span class="nav-text">将 GitHub 和 Hexo 关联起来</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo个性化配置"><span class="nav-number">4.</span> <span class="nav-text">Hexo个性化配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#更换主题"><span class="nav-number">4.1.</span> <span class="nav-text">更换主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网站配置"><span class="nav-number">4.2.</span> <span class="nav-text">网站配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#网站基本配置"><span class="nav-number">4.2.1.</span> <span class="nav-text">网站基本配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网站其他配置"><span class="nav-number">4.2.2.</span> <span class="nav-text">网站其他配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#处理点击“标签”-404错误"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">处理点击“标签” 404错误</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#给导航增加选项，如“分类”"><span class="nav-number">4.2.2.2.</span> <span class="nav-text">给导航增加选项，如“分类”</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#去掉footer的由-Hexo-强力驱动，主题等信息"><span class="nav-number">4.2.2.3.</span> <span class="nav-text">去掉footer的由 Hexo 强力驱动，主题等信息</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集成第三方服务"><span class="nav-number">4.2.3.</span> <span class="nav-text">集成第三方服务</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#百度统计"><span class="nav-number">4.2.3.1.</span> <span class="nav-text">百度统计</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#阅读次数统计（LeanCloud）"><span class="nav-number">4.2.3.2.</span> <span class="nav-text">阅读次数统计（LeanCloud）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改文章底部那个带-号的标签"><span class="nav-number">4.2.4.</span> <span class="nav-text">修改文章底部那个带#号的标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#给文章添加边框效果"><span class="nav-number">4.2.5.</span> <span class="nav-text">给文章添加边框效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在网站底部加上本站访客数"><span class="nav-number">4.2.6.</span> <span class="nav-text">在网站底部加上本站访客数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改页面中文显示"><span class="nav-number">4.2.7.</span> <span class="nav-text">修改页面中文显示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现文章的统计功能"><span class="nav-number">4.2.8.</span> <span class="nav-text">实现文章的统计功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加顶部加载条"><span class="nav-number">4.2.9.</span> <span class="nav-text">添加顶部加载条</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改字体大小"><span class="nav-number">4.2.10.</span> <span class="nav-text">修改字体大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改页面样式"><span class="nav-number">4.2.11.</span> <span class="nav-text">修改页面样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改页面的html结构"><span class="nav-number">4.2.12.</span> <span class="nav-text">修改页面的html结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置头像"><span class="nav-number">4.2.13.</span> <span class="nav-text">设置头像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置网站图标"><span class="nav-number">4.2.14.</span> <span class="nav-text">设置网站图标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绑定域名"><span class="nav-number">4.2.15.</span> <span class="nav-text">绑定域名</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#博文操作"><span class="nav-number">5.</span> <span class="nav-text">博文操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建博文"><span class="nav-number">5.1.</span> <span class="nav-text">新建博文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑博文"><span class="nav-number">5.2.</span> <span class="nav-text">编辑博文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编辑博文主要信息"><span class="nav-number">5.2.1.</span> <span class="nav-text">编辑博文主要信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文章摘要"><span class="nav-number">5.2.2.</span> <span class="nav-text">文章摘要</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#给博客插入图片"><span class="nav-number">5.2.3.</span> <span class="nav-text">给博客插入图片</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#本地路径"><span class="nav-number">5.2.3.1.</span> <span class="nav-text">本地路径</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用七牛云引用外部链接"><span class="nav-number">5.2.3.2.</span> <span class="nav-text">使用七牛云引用外部链接</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">6.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Huiting Cai</span>
+
+  
+</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
